@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#10090f">
+  <meta name="description" content="A little cinematic birthday surprise, made especially for Annu Sharma.">
+  <title>For Annu · A Birthday Story</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Sans:wght@300;400;500;600&family=Parisienne&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="locked">
+  <div class="grain" aria-hidden="true"></div>
+  <div class="starfield" aria-hidden="true" id="starfield"></div>
+  <header class="topbar" aria-label="Experience controls">
+    <a class="wordmark" href="#opening" aria-label="For Annu, beginning">A <span>✳</span> S</a>
+    <div class="controls">
+      <button class="music-toggle" id="musicToggle" aria-label="Play music" aria-pressed="false"><span class="music-icon">♫</span><span class="music-label">Music</span></button>
+      <label class="volume-wrap" aria-label="Music volume"><span>VOL</span><input id="volume" type="range" min="0" max="1" step="0.01" value="0.42"></label>
+    </div>
+  </header>
+  <audio id="music" loop preload="none"><source src="music/birthday.wav" type="audio/wav"><source src="music/birthday.mp3" type="audio/mpeg"></audio>
+  <main>
+    <section class="scene opening active" id="opening" aria-labelledby="opening-title">
+      <div class="opening-glow"></div><p class="eyebrow fade-in">A little story, made just for you</p>
+      <div class="opening-lines" id="openingLines" aria-live="polite">
+        <p class="intro-line">Some dates are just dates...</p><p class="intro-line">But some dates change everything.</p>
+        <p class="intro-date">30 <i>September</i> 2005</p><p class="intro-line">The day a beautiful soul came into this world...</p>
+      </div>
+      <div class="opening-reveal" id="openingReveal"><span class="script">Annu Sharma</span><span class="heart">♡</span><p>This little surprise is just for you.</p><button class="button button-gold" id="enterButton">Enter your surprise <span>✦</span></button></div>
+      <span class="opening-index">A BIRTHDAY FILM&nbsp;&nbsp; · &nbsp;&nbsp;01 / 09</span>
+    </section>
+
+    <section class="scene candle-scene" id="candles" aria-labelledby="candles-title">
+      <div class="scene-copy"><p class="eyebrow">Chapter one · Candlelight</p><h1 id="candles-title">Before the celebration begins<span class="gold">...</span></h1><p class="lead">Let's light a little light for every beautiful chapter of your life.</p><p class="instruction">Tap each candle <span>✧</span></p></div>
+      <div class="cake-stage" id="cakeStage" aria-label="Birthday cake with seven unlit candles">
+        <div class="cake-halo"></div><div class="cake"><div class="cake-top"></div><div class="icing"></div><div class="cake-side"><i></i><i></i><i></i><i></i><i></i></div><div class="cake-base"></div><div class="cake-plate"></div></div>
+        <div class="candles" id="candlesList"></div>
+      </div>
+      <div class="scene-foot"><p class="status" id="candleStatus">Seven little wishes, waiting to glow.</p><p class="after-candles hidden" id="afterCandles">Every little flame carries a wish...<br><span>And tonight, every wish is for you. ♡</span></p><button class="button next-button hidden" id="toCake">Let's cut the cake <span>↗</span></button></div>
+      <span class="scene-index">02 / 09</span>
+    </section>
+
+    <section class="scene cake-scene" id="cake" aria-labelledby="cake-title">
+      <div class="cake-closeup"><div class="cake-halo"></div><div class="cake cake-big"><div class="cake-top"></div><div class="icing"></div><div class="cake-side"><i></i><i></i><i></i><i></i><i></i></div><div class="cake-base"></div><div class="cake-plate"></div></div><div class="cake-candles" aria-hidden="true"><b>✦</b><b>✦</b><b>✦</b></div></div>
+      <div class="cake-copy"><p class="eyebrow">Chapter two · Make a wish</p><h1 id="cake-title">Make a wish, <i>Annu...</i></h1><p class="lead">Because tonight, the world is celebrating <em>you.</em></p><button class="button button-gold" id="cutCake">Cut the cake <span>♡</span></button><div class="birthday-reveal hidden" id="birthdayReveal"><p class="eyebrow">A wish for your next chapter</p><h2>Happy Birthday,<br><span>Annu Sharma</span> <b>♡</b></h2><p>30 September 2005 — the day everything became a little more beautiful.</p><button class="button next-button" data-scroll="memories">Keep the story going <span>↗</span></button></div></div>
+      <div class="celebration" id="celebration" aria-hidden="true"></div><span class="scene-index">03 / 09</span>
+    </section>
+
+    <section class="scene memories-scene" id="memories" aria-labelledby="memories-title">
+      <div class="memory-heading"><p class="eyebrow">Chapter three · Little moments, kept forever</p><h1 id="memories-title">A story in <i>photographs</i></h1></div>
+      <div class="film-frame" id="filmFrame"><button class="photo-button" id="photoButton" aria-label="Open photograph full screen"><img id="memoryPhoto" src="images/photo1.jpg" alt="Annu in a blue sari, among the garden plants" loading="eager"></button><div class="film-vignette"></div><div class="film-meta"><span id="photoCount">01 — 06</span><span>ANNU · 2026</span></div><button class="film-arrow prev" id="photoPrev" aria-label="Previous photograph">←</button><button class="film-arrow next" id="photoNext" aria-label="Next photograph">→</button></div>
+      <div class="memory-caption"><p id="photoCaption">The kind of smile that can turn an ordinary moment into a favorite memory.</p><div class="film-dots" id="filmDots" aria-label="Choose photograph"></div><p class="memory-dedication">These are only glimpses. The person in them is worth celebrating every day. <span>♡</span></p></div>
+      <div class="memory-strip" id="memoryStrip" aria-label="All six photographs">
+        <button class="memory-thumb active" type="button" aria-label="Show photograph 1"><img src="images/photo1.jpg" alt="" loading="lazy"><span>01</span></button>
+        <button class="memory-thumb" type="button" aria-label="Show photograph 2"><img src="images/photo2.jpg" alt="" loading="lazy"><span>02</span></button>
+        <button class="memory-thumb" type="button" aria-label="Show photograph 3"><img src="images/photo3.jpg" alt="" loading="lazy"><span>03</span></button>
+        <button class="memory-thumb" type="button" aria-label="Show photograph 4"><img src="images/photo4.jpg" alt="" loading="lazy"><span>04</span></button>
+        <button class="memory-thumb" type="button" aria-label="Show photograph 5"><img src="images/photo5.jpg" alt="" loading="lazy"><span>05</span></button>
+        <button class="memory-thumb" type="button" aria-label="Show photograph 6"><img src="images/photo6.jpg" alt="" loading="lazy"><span>06</span></button>
+      </div>
+      <span class="scene-index">04 / 09</span>
+    </section>
+
+    <section class="scene letter-scene" id="letter" aria-labelledby="letter-title"><div class="letter-light"></div><div class="letter-paper"><p class="eyebrow">Chapter four · A note from the heart</p><h1 id="letter-title">A letter for you<span class="gold">...</span></h1><div class="letter-body" id="letterBody"><p>Dear Annu,</p><p>Today isn't only about celebrating another year of your life. It's about celebrating the person you've become, the memories you've created, the dreams you're carrying, and all the beautiful moments still waiting for you.</p><p>Looking at these photographs, I hope you see more than moments captured—you deserve to feel celebrated for the person you are in every one of them.</p><p>Some people make life feel a little warmer simply by being themselves. I hope today gives you back a little of that warmth. <span class="gold">♡</span></p><p>You don't have to be perfect or have everything figured out to be worthy of kindness. You deserve it on the ordinary days, too—simply because you are you.</p><p>I hope this new chapter brings you countless reasons to smile, dreams that slowly turn into reality, and memories you'll look back on with a happy heart.</p><p>Whenever life feels difficult, remember how far you've already come. Keep believing in yourself. Keep chasing your dreams. Keep laughing. Keep growing. And never lose the beautiful person you are.</p><p>Today, I hope you feel just how special you truly are.</p><p>Happy Birthday, Annu. <span class="gold">♡</span><br>May this year become one of the most beautiful chapters of your story.</p><p class="letter-signoff">With lots of love &amp; the warmest wishes <span class="gold">♡</span></p></div></div><span class="scene-index">05 / 09</span></section>
+
+    <section class="scene quotes-scene" id="thoughts" aria-labelledby="thoughts-title"><div class="moon"></div><div class="quote-wrap"><p class="eyebrow">Chapter five · Things worth remembering</p><h1 id="thoughts-title" class="sr-only">A few thoughts for you</h1><div class="quote-card" aria-live="polite"><span class="quote-mark">“</span><p id="quoteText">Some smiles are beautiful...<br><i>...and some smiles make the whole world feel beautiful. ♡</i></p></div><div class="quote-nav"><span id="quoteCount">01 — 05</span><button class="button text-button" id="nextQuote">A little more <span>→</span></button></div></div><span class="scene-index">06 / 09</span></section>
+
+    <section class="scene wishes-scene" id="wishes" aria-labelledby="wishes-title"><div class="wishes-orbit"></div><div class="wishes-content"><p class="eyebrow">Chapter six · From the heart</p><h1 id="wishes-title">21 wishes for 21<br><i>beautiful years</i> <span class="gold">♡</span></h1><div class="wish-counter"><span id="wishNumber">01</span><span class="wish-rule"><i id="wishProgress"></i></span><span>21</span></div><p class="wish-text" id="wishText">May your smile never fade.</p><button class="button button-outline" id="nextWish">Unwrap a wish <span>✦</span></button></div><span class="scene-index">07 / 09</span></section>
+
+    <section class="scene gift-scene" id="gift" aria-live="polite"><div class="gift-glow"></div><p class="eyebrow">Chapter seven · A little truth</p><div class="gift-lines"><p>If I could give you one thing today...</p><p>It wouldn't be a gift.</p><p>It wouldn't be flowers.</p><p>It wouldn't even be a wish.</p><h1>I'd give you the ability to see yourself through the eyes of everyone who loves you<span class="gold">...</span></h1><h1 class="gift-last">...so you could finally understand how special you truly are. <span class="gold">♡</span></h1></div><button class="button text-button hidden" id="toFinal">One last thing <span>↗</span></button><span class="scene-index">08 / 09</span></section>
+
+    <section class="scene finale-scene" id="finale" aria-labelledby="finale-title"><div class="finale-stars" id="finaleStars"></div><div class="finale-copy" id="finaleCopy"><p class="eyebrow">One last thing...</p><p class="finale-beat">Before you leave...</p><p class="finale-beat">Make one more wish.</p><button id="wishCandle" class="wish-candle" aria-label="Blow out the candle to make a wish"><span class="wish-flame"></span><span class="wish-wick"></span><span class="wish-wax"></span></button><div class="final-words hidden" id="finalWords"><p class="eyebrow">30 September 2005 · A beautiful soul entered this world</p><h1 id="finale-title">Happy Birthday,<br><i>Annu Sharma</i> <span class="gold">♡</span></h1><p>And today, the world gets another reason to celebrate.</p><h2>Keep smiling.<br>Keep dreaming.<br>Keep shining.<br>Keep being <i>you.</i> <span class="gold">♡</span></h2><p class="final-reassurance">When today is over, keep this close: you matter, your dreams matter, and you are loved exactly as you are.</p><p class="next-chapter">Here's to your next beautiful chapter...</p><p class="signoff">Happy Birthday, Annu. 🎂♡</p><button class="button button-gold" id="replay">Replay this surprise <span>↻</span></button><p class="signature">Made with <span>♥</span> especially for Annu.</p></div></div><div class="petals" id="petals" aria-hidden="true"></div><span class="scene-index">09 / 09</span></section>
+  </main>
+  <dialog class="photo-dialog" id="photoDialog"><button class="dialog-close" id="closePhoto" aria-label="Close photograph">×</button><img id="fullPhoto" src="" alt=""><p id="fullPhotoCaption"></p></dialog>
+  <script src="script.js"></script>
+</body>
+</html>

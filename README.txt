@@ -1,0 +1,1 @@
+The included birthday.wav is an original gentle piano-and-ambient instrumental loop. Playback starts only after the visitor enters the experience. To use your own MP3, add birthday.mp3 and move its <source> above the WAV source in index.html.
